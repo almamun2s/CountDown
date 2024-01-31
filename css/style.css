@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+/* Browser reset CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+img{
+    max-width: 100%;
+}
+:root{
+    --color-bg: #f0f8ff;
+    --ff-primary: "Roboto", sans-serif;
+}
+.cd-container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+/* Count Down section */
+.cd-count-down{
+    background-color: var(--color-bg);
+    padding: 2rem;
+}
+
+.cd-count-down-inner{
+    display: flex;
+    justify-content: space-between;
+}
+.cd-left{
+    width: 48%;
+}
+.cd-right{
+    width: 48%;
+}
+.cd-right h2{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    color: #226a6d;
+    padding-bottom: 0.5rem;
+}
+.cd-right h3{
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+    color: #111;
+    padding-bottom: 0.5rem;
+}
+.cd-right p{
+    color: #666;
+    line-height: 1.5rem;
+}
+
+/* Deadline */
+.cd-deadline{
+    display: flex;
+    padding-top: 2rem;
+    justify-content: space-between;
+}
+.cd-deadline-formate{
+    width: 18%;
+    text-align: center;
+    background-color: #0d0e35;
+    color: #fff;
+    padding: 1rem;
+    /* font-size: `; */
+}
+.cd-deadline-formate h4{
+    font-size: 2rem;
+}
+.cd-deadline-formate span{
+    text-transform: uppercase;
+}
+
+@media (max-width:1200px) {
+    .cd-count-down-inner{
+        flex-direction: column;
+    }
+    .cd-left{
+        width: 100%;
+    }
+    .cd-right{
+        width: 100%;
+    }
+}
