@@ -34,7 +34,7 @@ const cdMinutes = document.querySelector('.cd-minutes');
 const cdSeconds = document.querySelector('.cd-seconds');
 
 
-let futureDate = new Date(2024, 1, 2, 0, 0 );
+let futureDate = new Date(2024, 1, 3, 20, 0 );
 
 const year      = futureDate.getFullYear();
 const hour      = futureDate.getHours();
@@ -49,7 +49,7 @@ let weekDay = futureDate.getDay();
 weekDay = weekDays[weekDay];
 
 
-giveaway.innerText = `giveaway ends on ${weekDay} ${date}th ${month}, ${year} , ${hour}:${minute}am `;
+giveaway.innerText = `giveaway ends on ${weekDay} ${month} ${date}, ${year} , ${hour}:${minute}am `;
 
 
 // Future time in ms 
@@ -96,7 +96,14 @@ function getRemainingTime() {
     cdHours.innerHTML   = formateTime(hours);
     cdMinutes.innerHTML = formateTime(minutes);
     cdSeconds.innerHTML = formateTime(seconds);
+    if (timeRemain < 0) {
+        clearInterval(countDown);
+        cdDays.innerHTML    = '00';
+        cdHours.innerHTML   = '00';
+        cdMinutes.innerHTML = '00';
+        cdSeconds.innerHTML = '00';
+    }
 }
 
-getRemainingTime();
 let countDown = setInterval(getRemainingTime, 1000);
+getRemainingTime();
